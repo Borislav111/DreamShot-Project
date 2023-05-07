@@ -17,6 +17,6 @@ public class testCaseOne extends BaseTest{
         homePage.navigateUrl();
         header.openPricingPage();
         pricingPage.verifyUrl();
-        Assert.assertTrue(pricingPage.checkCurrencySymbol(), "The '$' currency is present");
+        Assert.assertTrue(pricingPage.checkCurrencySymbol(), "The '$' currency is not present");
     }
 }
