@@ -1,0 +1,123 @@
+Bug ID - DS-01
+Name - Validation for 'Email' appears in the 'Password' field
+Priority - 1
+Severity - 1
+Description - Given the 'Sign Up' form is opened and a user enters a valid email and password
+              then the password field requires an '@' and says it's an email field
+Steps to reproduce - 1. Load the URL
+                     2. Click on 'Sign Up' button located at the header
+                     3. Enter a valid credentials in 'Email' field
+                     4. Enter a valid credentials in 'Password' field
+                     5. Click 'Sign Up' button
+Expected Result - The user is logged in
+Actual Result - The user is not logged in and must use '@' with text after it in the "Password" field
+Attachment - https://app.birdeatsbug.com/sessions/pzmujm103ANgdAVXfJBCNAXbqlhVSdhttLIAGlybHPTc
+Status - New
+Component - Sign Up
+Version/Build number (Found in) - ---
+Environment - Windows 11, Google Chrome 113.0.5672.63
+Date Created - 08/05/2023
+Author - Borislav Traychev
+Audit log - ---
+
+
+Bug ID - DS-02
+Name - The video is not started and the URL is not changed after clicking on 'Watch Video' button
+Priority - 1
+Severity - 1
+Description - Given the Framer site is loaded and a user clicks on 'Watch Video' button
+Steps to reproduce - 1. Load the URL
+                     2. Click on 'Watch Video' button
+Expected Result - Url is changed and video is started
+Actual Result - Url doesn't change and the video is not opened
+Attachment - https://app.birdeatsbug.com/sessions/ClDVnfSVkdef96uCTtni0eofyeoZcsrWV2yK6YSuX2fQ
+Status - New
+Component - Homepage
+Version/Build number (Found in) - ---
+Environment - Windows 11, Google Chrome 113.0.5672.63
+Date Created - 08/05/2023
+Author - Borislav Traychev
+Audit log - ---
+
+
+Bug ID - DS-03
+Name - The newsletter 'Sign Up' button doesn't change after subscription
+Priority - 1
+Severity - 1
+Description - Given the Framer site is loaded and user navigates to the bottom of the page to make a
+              subscription
+Steps to reproduce - 1. Load the URL
+                     2. Navigate to the footer of the page
+                     3. Enter a valid email address in newsletter form
+                     4. Click 'Sign Up' button
+Expected Result - The 'Sign Up' button changes its text to 'Subscribed!'
+Actual Result - The text of the 'Sign Up' button remains the same
+Attachment - https://app.birdeatsbug.com/sessions/lr9ohrocYRoQahM8Kthi2FpDgCHG1dGtp0ExviLJOhDz
+Status - New
+Component - Homepage, Newsletter form
+Version/Build number (Found in) - ---
+Environment - Windows 11, Google Chrome 113.0.5672.63
+Date Created - 08/05/2023
+Author - Borislav Traychev
+Audit log - ---
+
+
+Bug ID - DS-04
+Name - 'Learn more' URL and the page is not displayed
+Priority - 1
+Severity - 1
+Description - When a user clicks on 'Learn more' button located in the homepage, nothing happens
+Steps to reproduce - 1. Load the URL
+                     2. Scroll down to 'Learn more' button
+                     3. Click on 'Learn more' button
+Expected Result - 'Learn more' page is opened and the URL is changed
+Actual Result - URL remains the same and the page is not opened
+Attachment - https://app.birdeatsbug.com/sessions/-BQjrq3-vWFuOUJiZfu0ncSW-QMB0O2MSWd34h9ZuDul
+Status - New
+Component - Homepage
+Version/Build number (Found in) - ---
+Environment - Windows 11, Google Chrome 113.0.5672.63
+Date Created - 08/05/2023
+Author - Borislav Traychev
+Audit log - ---
+
+
+Bug ID - DS-05
+Name - 'Sign Up' button remains visible after successful login
+Priority - 1
+Severity - 1
+Description - 'Sign Up' button remains visible after successful login
+Steps to reproduce - 1. Load the URL
+                     2. Click on 'Sign Up' button located in the top right corner of the header
+                     3. Enter credentials as required for email and password
+                     4. Click 'Sign up' button
+Expected Result - The user is logged in successfully and 'Sign Up' button is not visible
+Actual Result - The user is logged in successfully and the 'Sign Up' button is still visible
+Attachment - https://app.birdeatsbug.com/sessions/PNII2O7KQUHqM8DwOwrTN6kMPKErdK8LSiRfQWM46A0d
+Status - New
+Component - Homepage, Sign up
+Version/Build number (Found in) - ---
+Environment - Windows 11, Google Chrome 113.0.5672.63
+Date Created - 08/05/2023
+Author - Borislav Traychev
+Audit log - ---
+
+
+Bug ID - DS-06
+Name - Login form is not opened and Url remains the same after clicking on 'Get the App' button at 'Components' page
+Priority - 1
+Severity - 1
+Description - Login form is not opened and Url remains the same after clicking on 'Get the App' button at 'Components' page
+Steps to reproduce - 1. Load the URL
+                     2. Click on 'Components' link located in the header
+                     3. Click on 'Get the App' button located next to the 3D animation
+Expected Result - Login form is opened and Url is changed
+Actual Result - The Url remains the same and login form is not opened
+Attachment - https://app.birdeatsbug.com/sessions/XPgQvEX55oQcSBTKpCXGu2JuYRc4ukVhW7tBZxFT77UB
+Status - New
+Component - Components
+Version/Build number (Found in) - ---
+Environment - Windows 11, Google Chrome 113.0.5672.63
+Date Created - 08/05/2023
+Author - Borislav Traychev
+Audit log - ---
