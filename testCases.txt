@@ -42,7 +42,7 @@ And I scroll down to 'Learn more' button
 And I click on 'Learn more' button
 Then the 'Learn more' page is opened
 
-6. Does 'Sign up' button disappears after successful login
+6. Does 'Sign up' button disappears after successful login -- (signUpBtnAfterLogin)
 Given the Framer site is loaded
 When I see the 'Sign up' button located in the top right corner of the header
 And I click on 'Sign up' button
