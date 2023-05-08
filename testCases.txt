@@ -1,0 +1,63 @@
+NOTE:
+Due to the lack of a product specification, it is difficult to understand the expected behavior of website elements.
+For this reason, test cases are written from a common culture.
+
+
+1. Valid login at Framer site
+Given the Framer site is loaded
+And I see the 'Sign Up' button in the header section
+When I click on 'Sign Up' button
+Then I see the 'Sign Up' form is opened
+And I enter a valid email
+And I enter a valid password
+When I click on 'Sign Up' button
+Then I'm logged in successfully
+
+2. Does a video player start and the page URL changes after clicking the "Watch Video" button -- (watchVideoTestCase)
+Given the Framer site is loaded
+When I see the 'Watch Video' button
+And I click on 'Watch Video' button
+Then I see that the video is started and the URL of the page is changed
+
+3. Does it subscribe after entering an email address in newsletter form located at the footer of the page -- (subscribeToNewsLetter)
+Given the Framer site is loaded
+When I scroll down to the footer of the website
+And I see the newsletter form located at bottom-right corner
+And I enter a valid email address in the input field
+And I click 'Sign Up' button
+Then I see that the button's text becomes 'Subscribed!'
+
+4. Does the 'Sign Up' form indicates when the credentials are not entered -- (invalidSignUp)
+Given the Framer site is loaded
+When I see the 'Sign up' button located in the top right corner of the header
+And I click on 'Sign up' button
+Then I see the 'Sign up' form is opened
+And I don't enter any login credentials
+And I click on 'Sign up' button
+Then the input fields of the 'Sign up' form are circled in red
+
+5. Does 'Learn more' page is displayed after clicking on 'Learn more' button -- (verifyLearnMorePage)
+Given the Framer site is loaded
+And I scroll down to 'Learn more' button
+And I click on 'Learn more' button
+Then the 'Learn more' page is opened
+
+6. Does 'Sign up' button disappears after successful login
+Given the Framer site is loaded
+When I see the 'Sign up' button located in the top right corner of the header
+And I click on 'Sign up' button
+Then I see the 'Sign up' form is opened
+And I enter the credentials required from the site
+And I click on 'Sign up' button
+And I see the confirmation image
+Then the 'Sign up' button in the top right corner of the header disappears
+
+7. Does clicking on 'Get the App' redirects you to 'Sign Up' form -- (openLoginFromComponentPage)
+Given the Framer site is loaded
+When I click on 'Components' link located in the header
+And I see the 'Component' page is opened
+When I see the first 'Get the App' button located next to 3D animation
+And I click on 'Get the App' button
+Then I am redirected to 'Sign Up' form
+
+
