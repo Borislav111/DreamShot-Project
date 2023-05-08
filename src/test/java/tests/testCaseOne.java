@@ -1,15 +1,14 @@
 package tests;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Header;
 import pages.HomePage;
 import pages.PricingPage;
 
-public class testCaseOne extends BaseTest{
+public class testCaseOne extends BaseTest {
     @Test
-    public void productsCurrency(){
+    public void productsCurrency() {
         Header header = new Header(driver);
         HomePage homePage = new HomePage(driver);
         PricingPage pricingPage = new PricingPage(driver);
