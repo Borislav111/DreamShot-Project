@@ -6,9 +6,9 @@ import pages.Header;
 import pages.HomePage;
 import pages.PricingPage;
 
-public class testCaseTwo extends BaseTest{
+public class testCaseTwo extends BaseTest {
     @Test
-    public void faqQuestions(){
+    public void faqQuestions() {
         HomePage homePage = new HomePage(driver);
         Header header = new Header(driver);
         PricingPage pricingPage = new PricingPage(driver);
