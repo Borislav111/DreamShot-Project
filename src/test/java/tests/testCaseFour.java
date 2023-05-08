@@ -5,9 +5,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
-public class testCaseFour extends BaseTest{
+public class testCaseFour extends BaseTest {
     @Test
-    public void signUpBtnColor(){
+    public void signUpBtnColor() {
         HomePage homePage = new HomePage(driver);
 
         homePage.navigateUrl();
