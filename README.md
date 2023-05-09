@@ -20,6 +20,7 @@ These are the implementation of the test cases I have written in the text file '
 Note: Due to the lack of product specifications, the expected results of the test cases defined by me are based on common sense.
 
 The project also contains a text file - 'bugs.txt', which contains logged bugs.
+The BirdEatsBug Google Chrome extension was used for bug reporting.
 
 The test cases I have defined identify bugs based on my understanding of the product's expected behavior:
 
