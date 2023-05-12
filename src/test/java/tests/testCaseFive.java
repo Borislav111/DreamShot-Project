@@ -10,6 +10,7 @@ public class testCaseFive extends BaseTest {
         HomePage homePage = new HomePage(driver);
 
         homePage.navigateUrl();
-        Assert.assertTrue(homePage.verifyBlur(), "The background is not blurred");
+        String blurValue = homePage.doesBackgroundBlur();
+        Assert.assertEquals(blurValue,"blur(20px)", "The background is not blurred");
     }
 }
