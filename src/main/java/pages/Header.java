@@ -12,10 +12,10 @@ public class Header extends BasePage {
     @FindBy(xpath = "//div[@data-framer-name='Desktop']//span[text()='Pricing']")
     WebElement pricingLink;
 
-    @FindBy(xpath = "//div[@data-framer-name='Desktop']//span[text()='Updates']")
+    @FindBy(css = ".update-nav-button")
     WebElement updatesLink;
 
-    @FindBy(xpath = "//div[@data-framer-name='Desktop']//span[text()='Sign up']")
+    @FindBy(css = ".framer-xkblh5")
     WebElement signUpLink;
 
     public Header(WebDriver driver) {
