@@ -10,11 +10,13 @@ import java.util.List;
 
 public class PricingPage extends BasePage {
     private final String pricingPageUrl = "https://mind-wend-913065.framer.app/pricing";
+
     @FindBy(css = "div .pricing-item")
     List<WebElement> pricingItems;
 
-    @FindBy(css = "div .pricing-container h2 span")
+    @FindBy(css = "div .pricing-container .price")
     WebElement priceTag;
+
     @FindBy(css = ".faq-question")
     List<WebElement> faqQuestions;
 
@@ -31,12 +33,12 @@ public class PricingPage extends BasePage {
         return faqQuestions.size();
     }
 
-    public boolean checkCurrencySymbol() {
+    public boolean pricingsContainSymbol(String priceSymbol) {
         boolean currSymbol = true;
         for (WebElement symbol : pricingItems) {
             wait.until(ExpectedConditions.visibilityOf(symbol));
             String priceText = priceTag.getText();
-            if (!priceText.matches(".*\\$.*")) {
+            if (!priceText.contains(priceSymbol)) {
                 currSymbol = false;
                 break;
             }
