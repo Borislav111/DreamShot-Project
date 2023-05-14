@@ -28,16 +28,16 @@ public class HomePage extends BasePage {
     @FindBy(css = ".get-app-button")
     WebElement getAppBtn;
 
-    @FindBy(css = "form input[value='Sign Up']")
+    @FindBy(css = "input[value='Sign Up']")
     WebElement footerSignUpBtn;
 
-    @FindBy(id = "overlay")
-    WebElement blurEffect;
+    @FindBy(css = ".framer-l3ry8h")
+    WebElement newsletterForm;
 
-    @FindBy(name = "Modal")
-    WebElement signUpForm;
+    @FindBy(css = ".framer-wGhh3 .framer-vrqh0x")
+    WebElement blurElement;
 
-    @FindBy(xpath = "//p[contains(@class,'framer-text')]//span[text()='Click to view in 3D']")
+    @FindBy(css = ".framer-8nn08p")
     WebElement viewIn3dBtn;
 
     @FindBy(tagName = "iframe")
@@ -52,7 +52,7 @@ public class HomePage extends BasePage {
     @FindBy(css = "div[data-framer-name='Footer'] input[name='email']")
     WebElement footerInputField;
 
-    @FindBy(xpath = "//div[@name='Content']//span[text()='learn more']")
+    @FindBy(css = ".framer-kd1tz6")
     WebElement learnMoreBtn;
 
     public HomePage(WebDriver driver) {
@@ -65,13 +65,11 @@ public class HomePage extends BasePage {
         verifyUrl(homeUrl);
     }
 
-    public boolean checkVisitBtn() throws InterruptedException {
+    public boolean getCards() {
         actions.moveToElement(cardElements.get(cardElements.size() - 1)).perform();
-
-        Thread.sleep(1000);
-
         boolean isDisplayedInAllCards = true;
         for (WebElement card : cardElements) {
+            smallWait.until(ExpectedConditions.visibilityOf(card));
             WebElement visitBtn = card.findElement(By.cssSelector(".visit-button"));
             if (!visitBtn.isDisplayed()) {
                 isDisplayedInAllCards = false;
@@ -81,15 +79,12 @@ public class HomePage extends BasePage {
         return isDisplayedInAllCards;
     }
 
-    public String getFooterSignUpColorBtn() {
-        wait.until(ExpectedConditions.visibilityOf(footerSignUpBtn));
-        actions.moveToElement(footerSignUpBtn).perform();
-        String buttonColor = footerSignUpBtn.getCssValue("background-color");
-        Color color = Color.fromString(buttonColor);
-        int red = color.getColor().getRed();
-        int green = color.getColor().getGreen();
-        int blue = color.getColor().getBlue();
-        return String.format("rgb(%d,%d,%d)", red, green, blue);
+    public boolean getFooterSignUpColorBtn(String backgroundColor) {
+        smallWait.until(ExpectedConditions.visibilityOf(newsletterForm));
+        actions.moveToElement(newsletterForm).perform();
+        WebElement signUpBtn = newsletterForm.findElement(By.cssSelector("input[type='submit']"));
+        String actualBackgroundColor = signUpBtn.getCssValue("background-color");
+        return actualBackgroundColor.equals(backgroundColor);
     }
 
     public boolean checkBtnOneAboveOther() {
@@ -105,24 +100,19 @@ public class HomePage extends BasePage {
             if (secondBtnLocation.getY() > firstBtnLocation.getY() + firstBtn.getSize().getHeight()) {
                 return true;
             } else {
-                return false;
+                throw new AssertionError("The second button is not positioned below the first button");
             }
+        } else {
+            throw new AssertionError("Expected to find exactly 2 buttons, but found " + contentButtons.size());
         }
-        return false;
     }
 
-    public boolean verifyBlur() {
-        String blurBeforeClick = blurEffect.getAttribute("innerHTML");
-        if (blurBeforeClick.isEmpty()) {
-            clickElement(getAppBtn);
-            smallWait.until(ExpectedConditions.visibilityOf(signUpForm));
-            String blurAfterClick = blurEffect.getAttribute("innerHTML");
-            if (!blurAfterClick.isEmpty()) {
-                return true;
-            }
-            return false;
+    public String doesBackgroundBlur() {
+        clickElement(getAppBtn);
+        if (blurElement.isDisplayed()) {
+            return blurElement.getCssValue("backdrop-filter");
         }
-        return false;
+        return "The background is not blurred";
     }
 
     public boolean verify3dAnimation() {
@@ -138,11 +128,12 @@ public class HomePage extends BasePage {
     }
 
     public String subscribeToNewsletter(String email) {
-        smallWait.until(ExpectedConditions.visibilityOf(footerSignUpBtn));
-        actions.moveToElement(footerSignUpBtn).perform();
+        smallWait.until(ExpectedConditions.visibilityOf(newsletterForm));
+        actions.moveToElement(newsletterForm).perform();
         enterText(footerInputField, email);
-        clickElement(footerSignUpBtn);
-        return footerSignUpBtn.getAttribute("value");
+        WebElement signUpBtn = newsletterForm.findElement(By.cssSelector("input[type='submit']"));
+        clickElement(signUpBtn);
+        return signUpBtn.getAttribute("value");
     }
 
     public void openLearnMorePage() {
