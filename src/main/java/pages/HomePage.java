@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -27,9 +26,6 @@ public class HomePage extends BasePage {
 
     @FindBy(css = ".get-app-button")
     WebElement getAppBtn;
-
-    @FindBy(css = "input[value='Sign Up']")
-    WebElement footerSignUpBtn;
 
     @FindBy(css = ".framer-l3ry8h")
     WebElement newsletterForm;
