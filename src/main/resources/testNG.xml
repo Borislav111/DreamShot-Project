@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="DreamShot Suite" verbose="1">
+    <test name="DreamShot Test">
+        <classes>
+            <class name="tests.testCaseOne"/>
+            <class name="tests.testCaseTwo"/>
+            <class name="tests.testCaseThree"/>
+            <class name="tests.testCaseFour"/>
+            <class name="tests.testCaseFive"/>
+            <class name="tests.testCaseSix"/>
+            <class name="tests.testCaseSeven"/>
+            <class name="tests.testCaseEight">
+            </class>
+        </classes>
+    </test>
+</suite>
