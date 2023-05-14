@@ -11,7 +11,7 @@ public class testCaseFour extends BaseTest {
         HomePage homePage = new HomePage(driver);
 
         homePage.navigateUrl();
-        String signUpColorBtn = homePage.getFooterSignUpColorBtn();
-        Assert.assertEquals(signUpColorBtn, "rgb(255,82,79)", "The 'Sign Up' background color mismatches");
+        boolean signUpColorBtn = homePage.getFooterSignUpColorBtn("rgba(255, 82, 79, 1)");
+        Assert.assertTrue(signUpColorBtn, "The 'Sign Up' background color mismatches");
     }
 }
