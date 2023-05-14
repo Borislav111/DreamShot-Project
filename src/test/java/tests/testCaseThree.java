@@ -6,10 +6,10 @@ import pages.HomePage;
 
 public class testCaseThree extends BaseTest {
     @Test
-    public void displayedVisitBtn() throws InterruptedException {
+    public void displayedVisitBtn() {
         HomePage homePage = new HomePage(driver);
 
         homePage.navigateUrl();
-        Assert.assertTrue(homePage.checkVisitBtn(), "The 'Visit' buttons should be displayed");
+        Assert.assertTrue(homePage.getCards(), "Not all 'Visit' buttons are displayed");
     }
 }
