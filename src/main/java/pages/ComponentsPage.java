@@ -11,7 +11,7 @@ public class ComponentsPage extends BasePage {
     private final String componentsUrl = "https://mind-wend-913065.framer.app/components";
     private String loginUrl = "https://mind-wend-913065.framer.app/signup";
 
-    @FindBy(xpath = "//div[@data-framer-component-type='DeprecatedRichText']//span[text()='Get the App']")
+    @FindBy(css = ".framer-15fwyui")
     WebElement getAppTopBtn;
 
     public ComponentsPage(WebDriver driver) {
