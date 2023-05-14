@@ -24,11 +24,11 @@ public class UpdatesPage extends BasePage {
 
     public Boolean verifyHeaderText() {
         try {
-            WebElement headerText = contentHeader.findElement(By.xpath(".//span[text()='Updates']"));
+            WebElement headerText = contentHeader.findElement(By.cssSelector(".framer-styles-preset-o3e5h0"));
             smallWait.until(ExpectedConditions.visibilityOf(headerText));
             return headerText.isDisplayed();
         } catch (NoSuchElementException e) {
-            return false;
+            throw new NoSuchElementException("The header text element could not be found: " + e.getMessage());
         }
     }
 }
